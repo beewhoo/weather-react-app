@@ -1,4 +1,4 @@
-This project is created by using React.js.
+This project is created using React.js.
 
 
 ## About this app
