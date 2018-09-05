@@ -12,7 +12,6 @@ class App extends Component {
           <h1 className="App-title">Check your weather!</h1>
         </header>
         <p className="App-intro">
-          Search by postal code.
         </p>
 
         <Form/>
