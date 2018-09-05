@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Form from './Form'
 
 class App extends Component {
   render() {
@@ -13,13 +14,8 @@ class App extends Component {
         <p className="App-intro">
           Search by postal code.
         </p>
-        
-    <form>
-      <label>
-        <input type="text" name="name" />
-      </label>
-      <input type="submit" value="Search" />
-    </form>
+
+        <Form/>
 
       </div>
     );
