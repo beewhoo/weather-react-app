@@ -64,7 +64,9 @@ class Form extends Component {
         <label>
           <input type="text" onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Get forecast" />
+
+        <p><input className='button' type="submit" value="Get forecast" /></p>
+
           <p className='icon'><img src={this.state.img} alt='icon' width='100px'/></p>
           <p>{this.state.highTemp}</p>
           <p>{this.state.lowTemp}</p>

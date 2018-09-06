@@ -28,6 +28,25 @@
   to { transform: rotate(360deg); }
 }
 
+input {
+
+  font-size: 2em;
+}
+
+.button {
+background:#009eff;
+color: white;
+border-style: outset;
+border-color: #0066A2;
+height: 30px;
+width: 200px;
+font: bold 15px arial, sans-serif;
+text-shadow:none;
+}
+
+
+
+
 .footer {
   position: absolute;
   bottom:0;
