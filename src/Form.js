@@ -33,7 +33,7 @@ class Form extends Component {
 
     let base = this
 
-   fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.city + '&units=metric&appid=052f26926ae9784c2d677ca7bc5dec98')
+   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + this.state.city + '&units=metric&appid=052f26926ae9784c2d677ca7bc5dec98')
      .then(function(response) {
        return response.json()
      }).then(function(json) {
@@ -44,7 +44,7 @@ class Form extends Component {
          description: "Forecast:" + json.weather[0].description,
          highTemp: "High:" + json.main.temp_max + " " + '°C',
          lowTemp: "Low:" + json.main.temp_min +  " " + '°C',
-         img: 'http://openweathermap.org/img/w/' + json.weather[0].icon + '.png'
+         img: 'https://openweathermap.org/img/w/' + json.weather[0].icon + '.png'
        })
      }).catch(function(ex) {
        console.log('Parsing JSON failed', ex)
@@ -71,7 +71,7 @@ class Form extends Component {
           <p>{this.state.highTemp}</p>
           <p>{this.state.lowTemp}</p>
           <p>{this.state.description}</p>
-          
+
 
 
 
