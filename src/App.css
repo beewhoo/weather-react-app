@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+
+
 }
 
 .App-logo {
@@ -33,6 +35,11 @@ input {
   font-size: 2em;
 }
 
+.forecast {
+  display: inline-block;
+  padding:1.5em;
+}
+
 .button {
 background:#009eff;
 color: white;
@@ -48,7 +55,7 @@ text-shadow:none;
 
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom:0;
   width:100%;
   background: #0084FF;
