@@ -71,6 +71,7 @@ class Form extends Component {
           <p>{this.state.highTemp}</p>
           <p>{this.state.lowTemp}</p>
           <p>{this.state.description}</p>
+          
 
 
 
