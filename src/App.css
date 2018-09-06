@@ -32,7 +32,7 @@
 
 input {
 
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .forecast {
@@ -47,8 +47,7 @@ border-style: outset;
 border-color: #0066A2;
 height: 30px;
 width: 200px;
-font: bold 15px arial, sans-serif;
-text-shadow:none;
+
 }
 
 
