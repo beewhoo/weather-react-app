@@ -27,3 +27,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.footer {
+  position: absolute;
+  bottom:0;
+  width:100%;
+  background: #0084FF;
+  color:white;
+}

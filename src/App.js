@@ -9,13 +9,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Check your weather!</h1>
+          <h1 className="App-title">Weather App</h1>
         </header>
         <p className="App-intro">
         </p>
-
         <Form/>
 
+            <footer className='footer'>Made with<span> ❤️</span> by Bibek</footer>
       </div>
     );
   }

@@ -12,7 +12,8 @@ class Form extends Component {
       highTemp:'',
       lowTemp:'',
       description:'',
-      icon:''
+      img:'https://media.giphy.com/media/26u6dryuZH98z5KuY/giphy.gif',
+      active:false
 
 
     }
@@ -32,7 +33,7 @@ class Form extends Component {
 
     let base = this
 
-   fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.city + '&appid=052f26926ae9784c2d677ca7bc5dec98')
+   fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.city + '&units=metric&appid=052f26926ae9784c2d677ca7bc5dec98')
      .then(function(response) {
        return response.json()
      }).then(function(json) {
@@ -40,14 +41,14 @@ class Form extends Component {
        // update state
        base.setState({
          city: json.name,
-         description: json.weather[0].description,
-         highTemp: json.main.temp_max,
-         lowTemp: json.main.temp_min,
-         icon: json.weather[0].icon
+         description: "Forecast:" + json.weather[0].description,
+         highTemp: "High:" + json.main.temp_max + " " + '°C',
+         lowTemp: "Low:" + json.main.temp_min +  " " + '°C',
+         img: 'http://openweathermap.org/img/w/' + json.weather[0].icon + '.png'
        })
      }).catch(function(ex) {
        console.log('Parsing JSON failed', ex)
-       alert('Err! ' + ex)
+       alert('City not found - Search again!')
      })
 
    event.preventDefault()
@@ -63,12 +64,13 @@ class Form extends Component {
         <label>
           <input type="text" onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Get my forecast" />
-          <p> City:{this.state.city} </p>
-          <p>Foreccast:{" "}{this.state.description}</p>
-          <p>High:{this.state.highTemp}</p>
-          <p>Low:{this.state.lowTemp}</p>
-          <img src={'http://openweathermap.org/img/w/' + this.state.icon + '.png'}/>
+        <input type="submit" value="Get forecast" />
+          <p className='icon'><img src={this.state.img} alt='icon' width='100px'/></p>
+          <p>{this.state.highTemp}</p>
+          <p>{this.state.lowTemp}</p>
+          <p>{this.state.description}</p>
+
+
 
 
 
