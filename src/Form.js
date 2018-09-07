@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 
 
 
+
 class Form extends Component {
+
+
 
   constructor(props){
     super(props)
@@ -14,12 +17,14 @@ class Form extends Component {
       highTemp1:'',
       lowTemp1:'',
       description1:'',
+      date1:'',
       img1:'https://media.giphy.com/media/26u6dryuZH98z5KuY/giphy.gif',
 
 
       highTemp2:'',
       lowTemp2:'',
       description2:'',
+      date2:'',
       img2:'https://media.giphy.com/media/26u6dryuZH98z5KuY/giphy.gif',
 
 
@@ -27,6 +32,7 @@ class Form extends Component {
       highTemp3:'',
       lowTemp3:'',
       description3:'',
+      date3:'',
       img3:'https://media.giphy.com/media/26u6dryuZH98z5KuY/giphy.gif',
 
 
@@ -34,6 +40,7 @@ class Form extends Component {
       highTemp4:'',
       lowTemp4:'',
       description4:'',
+      date4:'',
       img4:'https://media.giphy.com/media/26u6dryuZH98z5KuY/giphy.gif',
 
 
@@ -41,7 +48,11 @@ class Form extends Component {
       highTemp5:'',
       lowTemp5:'',
       description5:'',
+      date5:'',
       img5:'https://media.giphy.com/media/26u6dryuZH98z5KuY/giphy.gif',
+
+
+
 
 
 
@@ -63,39 +74,49 @@ class Form extends Component {
 
     let base = this
 
+
+
+
    fetch('https://api.openweathermap.org/data/2.5/forecast/daily?q=' + this.state.city + '&cnt=5&units=metric&appid=052f26926ae9784c2d677ca7bc5dec98')
      .then(function(response) {
        return response.json()
      }).then(function(json) {
-
+        console.log(json);
        // update state
        base.setState({
 
          description1: json.list[0].weather[0].description,
          highTemp1: json.list[0].temp.max + ' ' + '°C',
          lowTemp1: json.list[0].temp.min +  ' ' + '°C',
+
          img1: 'https://openweathermap.org/img/w/' + json.list[0].weather[0].icon + '.png',
+
+
 
 
          description2: json.list[1].weather[0].description,
          highTemp2: json.list[1].temp.max + ' ' + '°C',
          lowTemp2: json.list[1].temp.min +  ' ' + '°C',
+
          img2: 'https://openweathermap.org/img/w/' + json.list[1].weather[0].icon + '.png',
 
 
          description3: json.list[2].weather[0].description,
          highTemp3:  json.list[2].temp.max + ' ' + '°C',
          lowTemp3: json.list[2].temp.min +  ' ' + '°C',
+
          img3: 'https://openweathermap.org/img/w/' + json.list[2].weather[0].icon + '.png',
 
          description4: json.list[3].weather[0].description,
          highTemp4:  json.list[3].temp.max + ' ' + '°C',
          lowTemp4: json.list[3].temp.min +  ' '+ '°C',
+
          img4: 'https://openweathermap.org/img/w/' + json.list[3].weather[0].icon + '.png',
 
          description5: json.list[4].weather[0].description,
          highTemp5:  json.list[4].temp.max + ' ' + '°C',
          lowTemp5: json.list[4].temp.min +  ' ' + '°C',
+
          img5: 'https://openweathermap.org/img/w/' + json.list[4].weather[0].icon + '.png'
 
 
@@ -111,7 +132,12 @@ class Form extends Component {
      })
 
    event.preventDefault()
+
+
   }
+
+
+
 
   render() {
     return (
@@ -124,14 +150,18 @@ class Form extends Component {
           <input type="text" placeholder="search by city" onChange={this.handleChange} />
         </label>
 
-        <p><input className='button' type="submit" value="Get forecast" /></p>
+        <p><input className='button' type="submit" value="Search" /></p>
 
 
           <div className='forecast'>
             <img src={this.state.img1} alt='icon' width='100px'/>
             <p>{this.state.highTemp1}</p>
             <p>{this.state.lowTemp1}</p>
+            <p></p>
             <p>{this.state.description1.toUpperCase()}</p>
+
+
+
           </div>
 
 
@@ -139,6 +169,7 @@ class Form extends Component {
             <img src={this.state.img2} alt='icon' width='100px'/>
             <p>{this.state.highTemp2}</p>
             <p>{this.state.lowTemp2}</p>
+            <p>{this.state.date2}</p>
             <p>{this.state.description2.toUpperCase()}</p>
           </div>
 
@@ -146,6 +177,7 @@ class Form extends Component {
             <img src={this.state.img3} alt='icon' width='100px'/>
             <p>{this.state.highTemp3}</p>
             <p>{this.state.lowTemp3}</p>
+            <p>{this.state.date3}</p>
             <p>{this.state.description3.toUpperCase()}</p>
           </div>
 
@@ -153,20 +185,18 @@ class Form extends Component {
             <img src={this.state.img4} alt='icon' width='100px'/>
             <p>{this.state.highTemp4}</p>
             <p>{this.state.lowTemp4}</p>
+            <p>{this.state.date4}</p>
             <p>{this.state.description4.toUpperCase()}</p>
+
           </div>
 
           <div className='forecast'>
             <img src={this.state.img5} alt='icon' width='100px'/>
             <p>{this.state.highTemp5}</p>
             <p>{this.state.lowTemp5}</p>
+            <p>{this.state.date5}</p>
             <p>{this.state.description5.toUpperCase()}</p>
           </div>
-
-
-
-
-
 
 
 

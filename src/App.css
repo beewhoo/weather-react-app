@@ -41,12 +41,10 @@ input {
 }
 
 .button {
-background:#009eff;
-color: white;
+background:yellow;
 border-style: outset;
-border-color: #0066A2;
 height: 30px;
-width: 200px;
+width: 150px;
 
 }
 
@@ -57,6 +55,6 @@ width: 200px;
   position: fixed;
   bottom:0;
   width:100%;
-  background: #0084FF;
+  background: #009eff;
   color:white;
 }
